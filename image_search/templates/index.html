@@ -1,0 +1,87 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome!</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+    #ss_img{
+        /* border: 2px solid red; */
+    }
+    #scan_id{
+        /* border: 2px solid black; */
+    }
+    #scan_id::after{
+        content: '';
+        background: black;
+        position: absolute;
+        top: 266px; 
+        left: 540px;
+        right: 540px;
+        bottom: 150px; 
+        z-index: 3;        
+        opacity: 0.5;
+        /* border-radius: 10px; */
+        /* margin: 10px; */
+        /* margin: auto; */
+
+    }
+    </style>
+</head>
+
+<body>
+
+    <div class="search">
+
+        <div class="main_name">
+            <h1 class="main">Image Search</h1>
+        </div>
+
+        <div class="box">
+
+            <div id="ss_img">
+
+                <div id="scan_id_load" >
+                    <div style="height: 100%;">
+                        <img id="search_img" src="{% static 'img/search.png' %}" style="height: 100%;">
+                    </div>
+                </div>
+        
+                <img id="scan_search" src="{% static 'img/scan.png' %}" onclick="open_file()" alt="loading...">
+
+                <!-- <form name="img_sum_form" method="post" enctype="multipart/form-data">{% csrf_token %} -->
+                <input type="file" name="upload" id="input_file" accept="image/*" onchange="scan_img(event)" hidden>
+                <!-- </form> -->
+
+            </div>
+            
+        </div>
+
+        <div class="caption"></div>
+
+    </div>
+
+
+    <!-- <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+            <input type="file" name="upload" accept="image/*">
+            <br>
+            <button class="btn btn-dark my-4" type="submit">Submit</button>
+      </form> -->
+    
+    
+      <!-- <div class="scan" id="scan_id">
+        <img id="search_img" src="{% static 'img/search.png' %}"></div>
+      </div> 
+         -->
+
+    <script src="{% static 'js/index.js' %}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
